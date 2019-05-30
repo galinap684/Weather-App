@@ -10,6 +10,9 @@ class WeatherController < ApplicationController
         @lon = @result["coord"]["lon"]
         @icon = @result["weather"][0]["icon"]
         @description = @result["weather"][0]["description"]
+        @description_icon_link = `http://openweathermap.org/img/w/#{@icon}.png`
+
+
         
     end
 end
