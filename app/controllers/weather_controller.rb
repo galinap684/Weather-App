@@ -8,5 +8,8 @@ class WeatherController < ApplicationController
         @result = OpenWeather::Current.city("Brooklyn, NY", options)
         @lat = @result["coord"]["lat"]
         @lon = @result["coord"]["lon"]
+        @icon = @result["weather"][0]["icon"]
+        @description = @result["weather"][0]["description"]
+        
     end
 end
