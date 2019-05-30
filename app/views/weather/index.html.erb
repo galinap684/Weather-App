@@ -70,7 +70,8 @@ Test
 
 
 
-
+<%= @date %> 
+<hr>
 Description: <%= @description %> <br>
 
 <%= image_tag @description_icon_link %> <br>
@@ -86,10 +87,6 @@ Longitude: <%= @lon%> <br>
    <pre><%= JSON.pretty_generate(@five_day_forecast) %></pre>
 
 
-
-<div>
-The daily 5 day forecast is: <%= @five_day_forecast%>
-</div>
 <!--
 <% @current_weather.each do |key, value| %> 
 <div>

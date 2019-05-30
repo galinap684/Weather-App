@@ -1,6 +1,7 @@
 class WeatherController < ApplicationController
     require 'open_weather'
     require 'json'
+    require 'date'
 
     def index
        #API_key: `7061597a663b65c93c451d397754049f`
@@ -12,6 +13,9 @@ class WeatherController < ApplicationController
         @description = @current_weather["weather"][0]["description"]
         @description_icon_link = "http://openweathermap.org/img/w/#{@icon}.png"
 
+        @date = DateTime.now
+
+       # options[:list[dt]] = 
         @five_day_forecast = OpenWeather::Forecast.city("Brooklyn, NY", options)
 
 
