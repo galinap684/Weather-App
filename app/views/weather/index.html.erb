@@ -1,3 +1,9 @@
+<div class="current">
+
+</div>
+
+
+
 
     <div class="card-deck">
   <div class="card">
@@ -76,12 +82,13 @@ Description: <%= @description %> <br>
 Latitude: <%= @lat%> <br>
 Longitude: <%= @lon%> <br>
 
-<div>
-<%= @result%>
 
+
+<div>
+The daily 5 day forecast is: <%= @five_day_forecast%>
 </div>
 <!--
-<% @result.each do |key, value| %> 
+<% @current_weather.each do |key, value| %> 
 <div>
 
  <%= "The #{key} is #{value}." %>
