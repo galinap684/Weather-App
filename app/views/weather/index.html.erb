@@ -78,6 +78,13 @@ Description: <%= @description %> <br>
 Latitude: <%= @lat%> <br>
 Longitude: <%= @lon%> <br>
 
+<div>
+<%= @current_weather%>
+</div>
+<hr>
+
+   <pre><%= JSON.pretty_generate(@five_day_forecast) %></pre>
+
 
 
 <div>

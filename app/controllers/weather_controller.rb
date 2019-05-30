@@ -12,7 +12,6 @@ class WeatherController < ApplicationController
         @description = @current_weather["weather"][0]["description"]
         @description_icon_link = "http://openweathermap.org/img/w/#{@icon}.png"
 
-        options[:cnt] = 5
         @five_day_forecast = OpenWeather::Forecast.city("Brooklyn, NY", options)
 
 
