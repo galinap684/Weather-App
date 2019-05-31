@@ -7,6 +7,56 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+  <style type="text/css">
+body {
+  padding: 50px;
+  background-color: white;  }
+.location-search {
+  border: 0;
+  background: transparent;
+  font-size: 3em;
+  color: black;
+  padding-left: 10px;
+}
+
+  .jumbotron {
+background-color: #F8F9F9;
+
+}
+
+::placeholder {
+  color: black;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: black;
+}
+
+.forecast {
+  padding: 5px 5px;
+}
+
+.card {
+  border: 0;
+}
+
+.hoverable {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hoverable:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+  </style>
+
+
   </head>
 
   <body>

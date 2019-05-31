@@ -1,19 +1,32 @@
-<div class="current">
-Test
+
+
+<!-- Top / Current Weather -->
+<div class="jumbotron">
+  
+
+   <form>
+    <i class="fa fa-map-marker fa-3x"></i>
+    <input type="text" id="location" placeholder="Brooklyn, NY" class="location-search">
+              </form>
+  As of: <%= @current_time %>
+  <br>
+  <%= @current_temp_f %>&deg;<%= image_tag @description_icon_link %>
+<br>
+<%= @description %>
 </div>
 
 
-
-
+<div class="forecast">
+<!-- Five Day Forecast -->
 <div class="card-deck">
   <div class="card hoverable">
     <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
+      <!-- Day -->
+      <h5 class="card-title"><%= Date.today.strftime("%A") %></h5>
+      <%= image_tag @description_icon_link %> <br>
+
+      <p class="card-text">This is GGGGGa wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </div>
   </div>
 
@@ -21,23 +34,21 @@ Test
   <div class="card hoverable">
     <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Next Day</h5>
+      <%= image_tag @description_icon_link %> <br>
+
       <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
     </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
   </div>
 
 
   <div class="card hoverable">
     <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Next Day</h5>
+      <%= image_tag @description_icon_link %> <br>
+
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 8 mins ago</small>
     </div>
   </div>
 
@@ -45,29 +56,25 @@ Test
 <div class="card hoverable">
     <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Next Day</h5>
+      <%= image_tag @description_icon_link %> <br>
+
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
     </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
   </div>
-
-
 
 <div class="card hoverable">
     <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Next Day</h5>
+      <%= image_tag @description_icon_link %> <br>
+
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 20 mins ago</small>
     </div>
   </div>
 </div>
 </div>
-
+</div>
 
 
 
