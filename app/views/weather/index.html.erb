@@ -26,8 +26,12 @@
       <h5 class="card-title"><%= Date.parse(t["dt_txt"]).strftime("%A") %></h5> 
       Date: <%= t["dt_txt"]%><br>
       <%= image_tag "http://openweathermap.org/img/w/#{t["weather"][0]["icon"]}.png" %><br>
+<<<<<<< HEAD
       Min Temp: <%= t["main"]["temp_min"]%>&deg; <br>
       Max Temp: <%= t["main"]["temp_max"]%>&deg; <br>
+=======
+      Temp: <%= (t["main"]["temp_max"] * 9/5+ 32).floor %>&deg; <br>
+>>>>>>> 9e822bec826bc0f658abf5afdbf7215fa95e5654
       Weather: <%= t["weather"][0]["description"]%> <br>
 
       <!--<p class="card-text">This is GGGGGa wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--> 
