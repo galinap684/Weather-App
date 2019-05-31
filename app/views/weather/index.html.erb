@@ -77,7 +77,17 @@
 </div>
 
 
+The Current Unix Time is <%= @current_unix_time %> 
+The Unix time 24 hours from now is: <%= @same_time_tomorrow  %> 
 
+
+
+
+<%= @list.select{ |item| item["dt"] == 1559260800 } %> 
+
+
+
+<hr>
 Description: <%= @description %> <br>
 
 <%= image_tag @description_icon_link %> <br>
@@ -93,10 +103,6 @@ Longitude: <%= @lon%> <br>
    <pre><%= JSON.pretty_generate(@five_day_forecast) %></pre>
 
 
-
-<div>
-The daily 5 day forecast is: <%= @five_day_forecast%>
-</div>
 <!--
 <% @current_weather.each do |key, value| %> 
 <div>
