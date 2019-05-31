@@ -14,18 +14,15 @@ class WeatherController < ApplicationController
         @description = @current_weather["weather"][0]["description"]
         @description_icon_link = "http://openweathermap.org/img/w/#{@icon}.png"
 
-<<<<<<< HEAD
         @five_day_forecast = OpenWeather::Forecast.city("Brooklyn, NY", options)
         @current_temp_c = @current_weather["main"]["temp"]
         @current_temp_f = ((@current_temp_c * 9/5) + 32).floor
     
-=======
         time = Time.new
         @current_unix_time = time.strftime("%s").to_i
         @same_time_tomorrow = @current_unix_time + 86400 
 
 
->>>>>>> 03858e8658bcf2cc8490ab42d057dda2e989e350
 
        # options[:list[dt]] = 
         @five_day_forecast = OpenWeather::Forecast.city("Brooklyn, NY", options)
