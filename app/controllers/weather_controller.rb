@@ -27,6 +27,7 @@ class WeatherController < ApplicationController
        # options[:list[dt]] = 
         @five_day_forecast = OpenWeather::Forecast.city("Brooklyn, NY", options)
         @list = @five_day_forecast["list"]
+        #puts @list
 
        #current dt  1559239652
 

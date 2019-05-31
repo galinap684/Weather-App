@@ -1,5 +1,4 @@
 
-
 <!-- Top / Current Weather -->
 <div class="jumbotron">
   
@@ -7,106 +6,37 @@
    <form>
     <i class="fa fa-map-marker fa-3x"></i>
     <input type="text" id="location" placeholder="Brooklyn, NY" class="location-search">
-              </form>
-  As of: <%= @current_time %>
-  <br>
-  <%= @current_temp_f %>&deg;<%= image_tag @description_icon_link %>
-<br>
-<%= @description %>
+    </form>
+    As of: <%= @current_time %><br>
+  <%= @current_temp_f %>&deg;<%= image_tag @description_icon_link %><br>
+  <%= @description %>
 </div>
+
+<% weather_cards = @list.select{ |item| item["dt_txt"].include? "15:00"} %>
 
 
 <div class="forecast">
 <!-- Five Day Forecast -->
 <div class="card-deck">
+<% weather_cards.each do |t| %>
   <div class="card hoverable">
     <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
     <div class="card-body">
       <!-- Day -->
-      <h5 class="card-title"><%= Date.today.strftime("%A") %></h5>
-      <%= image_tag @description_icon_link %> <br>
+      <h5 class="card-title"><%= Date.parse(t["dt_txt"]).strftime("%A") %></h5> 
+      Date: <%= t["dt_txt"]%><br>
+      <%= image_tag "http://openweathermap.org/img/w/#{t["weather"][0]["icon"]}.png" %><br>
+      Min Temp: <%= t["main"]["temp_min"]%>&deg; <br>
+      Max Temp: <%= t["main"]["temp_max"]%>&deg;
+      Weather: <%= t["weather"][0]["description"]%> <br>
 
-      <p class="card-text">This is GGGGGa wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <!--<p class="card-text">This is GGGGGa wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--> 
     </div>
   </div>
-
-
-  <div class="card hoverable">
-    <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
-    <div class="card-body">
-      <h5 class="card-title">Next Day</h5>
-      <%= image_tag @description_icon_link %> <br>
-
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-    </div>
-  </div>
-
-
-  <div class="card hoverable">
-    <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
-    <div class="card-body">
-      <h5 class="card-title">Next Day</h5>
-      <%= image_tag @description_icon_link %> <br>
-
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-    </div>
-  </div>
-
-
-<div class="card hoverable">
-    <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
-    <div class="card-body">
-      <h5 class="card-title">Next Day</h5>
-      <%= image_tag @description_icon_link %> <br>
-
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-    </div>
-  </div>
-
-<div class="card hoverable">
-    <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
-    <div class="card-body">
-      <h5 class="card-title">Next Day</h5>
-      <%= image_tag @description_icon_link %> <br>
-
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-    </div>
-  </div>
+  <%end%>
 </div>
-</div>
-</div>
-
-
-The Current Unix Time is <%= @current_unix_time %> 
-The Unix time 24 hours from now is: <%= @same_time_tomorrow  %> 
-
-
-
-
-<%= @list.select{ |item| item["dt"] == 1559260800 } %> 
-
-
-
-<hr>
-Description: <%= @description %> <br>
-
-<%= image_tag @description_icon_link %> <br>
-
-Latitude: <%= @lat%> <br>
-Longitude: <%= @lon%> <br>
-
-<div>
-<%= @current_weather%>
-</div>
-<hr>
-
-   <pre><%= JSON.pretty_generate(@five_day_forecast) %></pre>
 
 
 <!--
-<% @current_weather.each do |key, value| %> 
-<div>
-
- <%= "The #{key} is #{value}." %>
- </div>
-<% end %>  --> 
+   <pre><%= JSON.pretty_generate(@five_day_forecast) %></pre>
+-->
