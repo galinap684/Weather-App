@@ -70,7 +70,16 @@ Test
 
 
 
-<%= @unixtime %> 
+The Current Unix Time is <%= @current_unix_time %> 
+The Unix time 24 hours from now is: <%= @same_time_tomorrow  %> 
+
+
+
+
+<%= @list.select{ |item| item["dt"] == 1559260800 } %> 
+
+
+
 <hr>
 Description: <%= @description %> <br>
 
