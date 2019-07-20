@@ -1,24 +1,4 @@
-# README
+# Weather App 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A weather app that utilizes the 'open-weather' Ruby gem to display the current weather and the weather for the next week of a specific location. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
